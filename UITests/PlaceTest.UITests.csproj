@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84D1D379-6739-4DD1-A07E-81B1E66D1D8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PlaceTest.UITests</RootNamespace>
+    <AssemblyName>PlaceTest.UITests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.0.7.1\lib\Xamarin.UITest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iOS\PlaceTest.iOS.csproj">
+      <Project>{5BE6DE7C-4A70-42E1-B426-8FAFFF556FE2}</Project>
+      <Name>PlaceTest.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Droid\PlaceTest.Droid.csproj">
+      <Project>{77A0F2F1-2401-46CC-B95D-AE6334E706A2}</Project>
+      <Name>PlaceTest.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests.cs" />
+    <Compile Include="AppInitializer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

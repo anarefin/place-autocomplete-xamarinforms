@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PlaceTest.MyPlace"
+Padding="10,40,10,10">
+<StackLayout Spacing="10" Orientation="Vertical">
+
+<SearchBar
+	x:Name="searchBar"
+	Placeholder="Search"
+	TextChanged="searchBarTextChanged"
+	SearchButtonPressed="searchBtnPressed"/>
+
+	 <ListView x:Name="lvPredicPlaces">
+     <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+              <StackLayout Orientation="Vertical">
+
+                <Label Text="{Binding description}"
+                       HorizontalOptions="FillAndExpand"
+                       />
+
+
+              </StackLayout>
+            
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    </ListView>
+
+</StackLayout>
+	
+</ContentPage>
